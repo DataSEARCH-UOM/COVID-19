@@ -44,14 +44,16 @@ class Patient extends Model
         return $this->belongsTo(ClusterQC::class);
     }
     public static function getPossibleExposureStateValues(){
-        $instance = new static; // create an instance of the model to be able to get the table name
-        $type = DB::select( DB::raw('SHOW COLUMNS FROM '.$instance->getTable().' WHERE Field = "exposure_state"') )[0]->Type;
-        preg_match('/^enum\((.*)\)$/', $type, $matches);
-        $enum = array();
-        foreach(explode(',', $matches[1]) as $value){
-            $v = trim( $value, "'" );
-            $enum[] = $v;
-        }
+//        $instance = new static; // create an instance of the model to be able to get the table name
+//        $type = DB::select( DB::raw('SHOW COLUMNS FROM '.$instance->getTable().' WHERE Field = "exposure_state"') )[0]->Type;
+//        $type = DB::select( DB::raw('SELECT * FROM information_schema.columns WHERE table_schema = '.env('DB_DATABASE').' AND table_name   = '.$instance->getTable()) )[0]->Type;
+//        preg_match('/^enum\((.*)\)$/', $type, $matches);
+//        $enum = array();
+//        foreach(explode(',', $matches[1]) as $value){
+//            $v = trim( $value, "'" );
+//            $enum[] = $v;
+//        }
+        $enum = ['IMPORTED_CASE','FROM_LOCAL_PATIENT','FROM_FOREIGNER','IN_QUARANTINE'];
         return $enum;
     }
 }

@@ -34,14 +34,15 @@ class PatientStatus extends Model
     }
 
     public static function getPossiblePatientStatusValues(){
-        $instance = new static; // create an instance of the model to be able to get the table name
-        $type = DB::select( DB::raw('SHOW COLUMNS FROM '.$instance->getTable().' WHERE Field = "state"') )[0]->Type;
-        preg_match('/^enum\((.*)\)$/', $type, $matches);
-        $enum = array();
-        foreach(explode(',', $matches[1]) as $value){
-            $v = trim( $value, "'" );
-            $enum[] = $v;
-        }
+//        $instance = new static; // create an instance of the model to be able to get the table name
+//        $type = DB::select( DB::raw('SHOW COLUMNS FROM '.$instance->getTable().' WHERE Field = "state"') )[0]->Type;
+//        preg_match('/^enum\((.*)\)$/', $type, $matches);
+//        $enum = array();
+//        foreach(explode(',', $matches[1]) as $value){
+//            $v = trim( $value, "'" );
+//            $enum[] = $v;
+//        }
+        $enum = ['QUARANTINE','SELF_QUARANTINE','COVID_POSITIVE','CRITICAL','DEAD','RECOVERED'];
         return $enum;
     }
 }

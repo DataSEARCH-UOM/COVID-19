@@ -17,7 +17,7 @@
                             <i class="fas fa-tachometer-alt">
 
                             </i>
-                            <span>{{ trans('global.dashboard') }}</span>
+                            <span>{{ trans('global.dashboard.dashboard') }}</span>
                         </p>
                     </a>
                 </li>
