@@ -72,6 +72,57 @@
                         </ul>
                     </li>
                 @endcan
+                @can('patient_management_access')
+                    <li class="nav-item has-treeview {{ request()->is('admin/patients*') ? 'menu-open' : '' }} {{ request()->is('admin/predictiones*') ? 'menu-open' : '' }} {{ request()->is('admin/clusterQCs*') ? 'menu-open' : '' }}">
+                        <a class="nav-link nav-dropdown-toggle">
+                            <i class="fas fa-users">
+
+                            </i>
+                            <p>
+                                <span>{{ trans('global.patientManagement.title') }}</span>
+                                <i class="right fa fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            @can('patient_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.patients.index") }}" class="nav-link {{ request()->is('admin/patients') || request()->is('admin/patients/*') ? 'active' : '' }}">
+                                        <i class="fas fa-unlock-alt">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('global.patient.title') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('cluster_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.clusterQCs.index") }}" class="nav-link {{ request()->is('admin/clusterQCs') || request()->is('admin/clusterQCs/*') ? 'active' : '' }}">
+                                        <i class="fas fa-user">
+
+                                        </i>
+                                        <p>
+                                            <span>{{ trans('global.clusterQC.title') }}</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                                @can('prediction_access')
+                                <li class="nav-item">
+                                <a href="{{ route("admin.predictions.index") }}" class="nav-link {{ request()->is('admin/predictions') || request()->is('admin/predictions/*') ? 'active' : '' }}">
+                                <i class="fas fa-briefcase">
+
+                                </i>
+                                <p>
+                                <span>{{ trans('global.prediction.title') }}</span>
+                                </p>
+                                </a>
+                                </li>
+                                @endcan
+                        </ul>
+                    </li>
+                @endcan
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                         <p>

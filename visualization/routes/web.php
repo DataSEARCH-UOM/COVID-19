@@ -1,6 +1,6 @@
 <?php
 
-Route::redirect('/', '/login');
+Route::redirect('/', '/guest');
 
 Route::redirect('/home', '/admin');
 
@@ -21,4 +21,21 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
     Route::resource('users', 'UsersController');
 
+    Route::resource('clusterQCs', 'ClusterQCController');
+
+    Route::delete('clusterQCs/destroy', 'ClusterQCController@massDestroy')->name('clusterQCs.massDestroy');
+
+    Route::resource('patients', 'PatientsController');
+
+    Route::delete('patients/destroy', 'PatientsController@massDestroy')->name('patients.massDestroy');
+
+    Route::resource('predictions', 'PredictionsController');
+
+    Route::delete('predictions/destroy', 'PredictionsController@massDestroy')->name('predictions.massDestroy');
+
+});
+
+Route::group(['prefix' => 'guest', 'as' => 'guest.', 'namespace' => 'Guest', 'middleware' => []], function () {
+
+    Route::get('/','HomeController@index')->name('home');
 });
