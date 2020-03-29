@@ -352,6 +352,14 @@ return [
             'status'  =>  'Status',
 
         ],
+        'district_chart'   =>  [
+            'header'    =>  'Patient Distribution in Districts',
+            'center_message'  => 'From 27 January to Today',
+        ],
+        'age_chart'   =>  [
+            'header'    =>  'Patient Distribution in Age groups',
+            'center_message'  => 'From 27 January to Today',
+        ],
 
     ],
 ];

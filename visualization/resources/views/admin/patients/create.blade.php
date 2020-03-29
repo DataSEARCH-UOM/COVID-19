@@ -227,10 +227,37 @@
                         style="width: 100%;" required>
                     <option
                         selected="selected">{{ old('hospital', isset($patient) ? $patient->patientStatuses()->latest('state_date')->first()->hospital: '') }}</option>
-                    <option> IDH</option>
-                    <option> NHIS</option>
+                    <option> NIID</option>
+                    <option> NHSL</option>
+                    <option> TH Ragama</option>
                     <option> TH Karapitiya</option>
+                    <option> TH Anuradhapuraya</option>
+                    <option> TH Kurunegala</option>
+                    <option> TH Jaffna</option>
+                    <option> NH Kandy</option>
+                    <option> KEGALLE</option>
+                    <option> TH Battico</option>
+                    <option> BATTICOLOA</option>
+                    <option> DGH Gampaha</option>
+                    <option> BADULLA DGH </option>
+                    <option> Negombo</option>
                     <option> TH Rathnapura</option>
+                    <option> MATARA</option>
+                    <option> PGH Badulla</option>
+                    <option> LRH</option>
+                    <option> DMH</option>
+                    <option> DGH Polonaruwa</option>
+                    <option> TH Kalubowila</option>
+                    <option> Castle St TH</option>
+                    <option> BH Hambanthota</option>
+                    <option> BH Monaragala </option>
+                    <option> BH Welikanda</option>
+                    <option> DGH Kaluthara</option>
+                    <option> Chest H. Welisara</option>
+                    <option> Colombo East</option>
+                    <option> Base Hospital</option>
+                    <option> BH Homagama</option>
+                    <option> Dr Neville Fernando</option>
                 </select>
                 @if($errors->has('hospital'))
                     <div class="invalid-feedback">

@@ -35,7 +35,9 @@
             <a href="https://uom.lk/datasearch/about" class="navbar-brand">
                 <img src="{{ asset('img/datasearch-logo.jpg') }}" alt="DataSEARCH Logo" class="brand-image"
                      style="opacity: .8">
-                <span class="brand-text font-weight-light">{{ trans('global.dashboard.datasearch') }}</span>
+                <img src="{{ asset('img/datasearch-logo3.jpg') }}" alt="DataSEARCH Logo" class="brand-image"
+                     style="opacity: .8">
+                {{--<span class="brand-text font-weight-light">{{ trans('global.dashboard.datasearch') }}</span>--}}
             </a>
 
             <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

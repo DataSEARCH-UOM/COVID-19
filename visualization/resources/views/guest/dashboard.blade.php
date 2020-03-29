@@ -210,7 +210,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p class="text-center">
-                                            <strong>{{trans('global.dashboard.daily_chart.center_message')}}</strong>
+                                            <strong>{{trans('global.dashboard.age_chart.center_message')}}</strong>
                                         </p>
 
                                         <div class="chart">
