@@ -56,7 +56,7 @@
                         class="form-control select2 big-select2 {{ $errors->has('gender') ? 'is-invalid' : '' }}"
                         style="width: 100%;" required>
                     <option
-                        selected="selected">{{ old('gender', isset($patient) ? $patient->patientStatuses()->latest()->first()->gender: '') }}</option>
+                        selected="selected">{{ old('gender', isset($patient) ? $patient->patientStatuses()->latest('state_date')->first()->gender: '') }}</option>
                     <option> MALE</option>
                     <option> FEMALE</option>
                     <option> UNKNOWN</option>
@@ -200,7 +200,7 @@
                         style="width: 100%;" required>
                     @foreach($patientStatuses as $patientStatus)
                         <option
-                            value="{{ $patientStatus }}" {{ old('patient_state', isset($patient) ? $patient->patientStatuses()->latest()->first()->state:'')==$patientStatus ? 'selected' : '' }}>
+                            value="{{ $patientStatus }}" {{ old('patient_state', isset($patient) ? $patient->patientStatuses()->latest('state_date')->first()->state:'')==$patientStatus ? 'selected' : '' }}>
                             {{ $patientStatus}}
                         </option>
                     @endforeach
@@ -226,7 +226,7 @@
                         class="form-control select2 big-select2 {{ $errors->has('hospital') ? 'is-invalid' : '' }}"
                         style="width: 100%;" required>
                     <option
-                        selected="selected">{{ old('hospital', isset($patient) ? $patient->patientStatuses()->latest()->first()->hospital: '') }}</option>
+                        selected="selected">{{ old('hospital', isset($patient) ? $patient->patientStatuses()->latest('state_date')->first()->hospital: '') }}</option>
                     <option> IDH</option>
                     <option> NHIS</option>
                     <option> TH Karapitiya</option>
@@ -249,7 +249,7 @@
                 <label for="identified_date">{{ trans('global.patient.fields.state_date') }}</label>
                 <input type="text" id="state_date" name="state_date"
                        class="form-control {{ $errors->has('state_date') ? 'is-invalid' : '' }}"
-                       value="{{ old('state_date', isset($patient) ? $patient->patientStatuses()->latest()->first()->state_date : '') }}"
+                       value="{{ old('state_date', isset($patient) ? $patient->patientStatuses()->latest('state_date')->first()->state_date : '') }}"
                        data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy"
                        data-toggle="tooltip" data-placement="top" data-html="true"
                        title="{{ trans('global.patient.fields.state_date_helper') }}" data-mask>

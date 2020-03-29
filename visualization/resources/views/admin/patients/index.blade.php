@@ -97,13 +97,13 @@
                                 {{ $patient->clusterQC->cluster_name ?? '' }}
                             </td>
                             <td>
-                                {{$patient->patientStatuses()->latest()->first()->hospital ?? ''}}
+                                {{$patient->patientStatuses()->latest('state_date')->first()->hospital ?? ''}}
                             </td>
                             <td>
-                                {{$patient->patientStatuses()->latest()->first()->state_date ?? ''}}
+                                {{$patient->patientStatuses()->latest('state_date')->first()->state_date ?? ''}}
                             </td>
                             <td>
-                                {{$patient->patientStatuses()->latest()->first()->state ?? ''}}
+                                {{$patient->patientStatuses()->latest('state')->first()->state ?? ''}}
                             </td>
                             <td>
                                 @can('patient_show')

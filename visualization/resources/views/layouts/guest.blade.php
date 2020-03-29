@@ -46,7 +46,7 @@
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="index3.html" class="nav-link">{{ trans('global.dashboard.sri_lanka') }}</a>
+                        <a href="{{route('guest.home')}}" class="nav-link {{ request()->is('guest/srilanka') ? 'active' : '' }}">{{ trans('global.dashboard.sri_lanka') }}</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">{{ trans('global.dashboard.worldwide') }}</a>
@@ -57,7 +57,13 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link" data-toggle="dropdown" href="#">
-                                {{ strtoupper(app()->getLocale()) }}
+                                @if(App::isLocale('en'))
+                                    English
+                                    @elseif(App::isLocale('sin'))
+                                    සිංහල
+                                    @elseif(App::isLocale('tamil'))
+                                    தமிழ்
+                                @endif
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
                                 @foreach(config('panel.available_languages') as $langLocale => $langName)

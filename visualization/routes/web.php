@@ -1,6 +1,8 @@
 <?php
 
-Route::redirect('/', '/guest');
+Route::redirect('/', '/guest/srilanka');
+Route::redirect('/guest', '/guest/srilanka');
+
 
 Route::redirect('/home', '/admin');
 
@@ -37,5 +39,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 Route::group(['prefix' => 'guest', 'as' => 'guest.', 'namespace' => 'Guest', 'middleware' => []], function () {
 
-    Route::get('/','HomeController@index')->name('home');
+    Route::get('/srilanka','HomeController@index')->name('home');
 });

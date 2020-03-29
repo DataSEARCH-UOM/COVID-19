@@ -305,7 +305,7 @@ return [
         'worldwide'  => 'Worldwide',
         'sri_lanka' =>  'Sri Lanka',
         'dashboard' =>  'Dashboard',
-        'covid19'   =>  'COVID-19',
+        'covid19'   =>  'covid-19',
         'total_cases'   => 'Total Confirmed Cases',
         'total_cases_helper'=> 'Total Confirmed Cumulative case count in Sri Lankan Hospitals',
         'recovered' =>  'Recovered Cases',
