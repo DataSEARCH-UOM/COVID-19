@@ -64,5 +64,7 @@ class ClusterQCSeeder extends Seeder
             ['id'=>49,'cluster_name'=>"Colombo_4",'lat'=>"6.8961000",'long'=>"79.8571000",'created_at'=>"2020-03-28 14:19:12",'updated_at'=>"2020-03-28 14:19:12"],
 
         ];
+
+        \App\ClusterQC::insert($clusters);
     }
 }

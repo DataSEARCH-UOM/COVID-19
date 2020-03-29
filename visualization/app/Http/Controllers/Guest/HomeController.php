@@ -20,8 +20,11 @@ class HomeController extends Controller
     public function index(Request $request){
         $dates = [];
         $start_date = new DateTime('2020-01-27');
+        $china_recover_date = new DateTime('2020-02-19');
         $today = new DateTime();
         array_push($dates,  $start_date->format("Y-m-d"));
+        array_push($dates,  $china_recover_date->format("Y-m-d"));
+
         $period = new \DatePeriod(new DateTime('2020-03-09'), new \DateInterval('P1D'),$today );
         foreach ($period as $date) {
            array_push( $dates, $date->format("Y-m-d"));
