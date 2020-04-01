@@ -739,7 +739,7 @@
                 // Enable zoom on the map
                 , zoom: {
                     enabled: true,
-                    maxLevel: 10
+                    maxLevel: 30
                 }
                 // Set default plots and areas style
                 , defaultPlot: {

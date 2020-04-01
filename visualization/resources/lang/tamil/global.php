@@ -305,7 +305,7 @@ return [
         'worldwide'  => 'Worldwide',
         'sri_lanka' =>  'Sri Lanka',
         'dashboard' =>  'Dashboard',
-        'covid19'   =>  'covid-19',
+        'covid19'   =>  'COVID-19',
         'total_cases'   => 'Total Confirmed Cases',
         'total_cases_helper'=> 'Total Confirmed Cumulative case count in Sri Lankan Hospitals',
         'recovered' =>  'Recovered Cases',
@@ -351,6 +351,14 @@ return [
             'exposure_type'  =>  'Exposure Type',
             'status'  =>  'Status',
 
+        ],
+        'district_chart'   =>  [
+            'header'    =>  'Patient Distribution in Districts',
+            'center_message'  => 'From 27 January to Today',
+        ],
+        'age_chart'   =>  [
+            'header'    =>  'Patient Distribution in Age groups',
+            'center_message'  => 'From 27 January to Today',
         ],
 
     ],
