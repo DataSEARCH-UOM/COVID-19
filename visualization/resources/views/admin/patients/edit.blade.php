@@ -58,7 +58,7 @@
                             class="form-control select2 big-select2 {{ $errors->has('gender') ? 'is-invalid' : '' }}"
                             style="width: 100%;" required>
                         <option
-                            selected="selected">{{ old('gender', isset($patient) ? $patient->patientStatuses()->latest('state_date')->first()->gender: '') }}</option>
+                            selected="selected">{{ old('gender', isset($patient) ? $patient->gender: '') }}</option>
                         <option> MALE</option>
                         <option> FEMALE</option>
                         <option> UNKNOWN</option>
