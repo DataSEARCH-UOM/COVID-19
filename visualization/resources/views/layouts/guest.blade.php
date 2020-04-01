@@ -56,9 +56,9 @@
                 </ul>
                 <!-- Right navbar links -->
                 @if(count(config('panel.available_languages', [])) > 0)
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" href="#">
+                    <!-- <ul class="navbar-nav ml-auto"> -->
+                        <!-- <li class="nav-item dropdown"> -->
+                            <!-- <a class="nav-link" data-toggle="dropdown" href="#">
                                 @if(App::isLocale('en'))
                                     English
                                     @elseif(App::isLocale('sin'))
@@ -66,14 +66,19 @@
                                     @elseif(App::isLocale('tamil'))
                                     தமிழ்
                                 @endif
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                @foreach(config('panel.available_languages') as $langLocale => $langName)
+                            </a> -->
+                            <!-- <div class="dropdown-menu dropdown-menu-right"> -->
+                                <!-- @foreach(config('panel.available_languages') as $langLocale => $langName)
                                     <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
-                                @endforeach
-                            </div>
-                        </li>
-                    </ul>
+                                @endforeach -->
+                            <!-- </div> -->
+                        <!-- </li> -->
+                    <!-- </ul> -->
+                    @foreach(config('panel.available_languages') as $langLocale => $langName)
+                        <ul class="navbar-nav ml-auto">
+                            <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                        </ul>
+                        @endforeach
                 @endif
 
         </div>
