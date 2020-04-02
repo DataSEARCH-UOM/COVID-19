@@ -103,7 +103,7 @@ class HomeController extends Controller
         $age_distribution_labels = ['1-20','21-40','41-60','60-80','80 <'];
         $age_distribution = [0,0,0,0,0];
         foreach ($patients as $patient){
-            if ($patient->age <= 20){
+            if ($patient->age <= 20 && $patient->age > 0){
                 $age_distribution[0] += 1;
             } else if ($patient->age <= 40){
                 $age_distribution[1] += 1;
