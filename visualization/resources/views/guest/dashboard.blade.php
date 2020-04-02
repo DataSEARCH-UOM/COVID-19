@@ -46,7 +46,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">{{ trans('global.dashboard.recovered') }}</span>
-                                <span class="info-box-number"><big>{{$total_recovered}}</big> <small>{{$total_recovered*100/$total_covid_positives}}%</small></span>
+                                <span class="info-box-number"><big>{{$total_recovered}}</big> <small>{{round($total_recovered*100/$total_covid_positives,2)}}%</small></span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -65,7 +65,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">{{ trans('global.dashboard.under_treatment') }}</span>
-                                <span class="info-box-number"><big>{{$total_covid_positives -$total_recovered - $total_diseased}}</big> <small>{{($total_covid_positives -$total_recovered - $total_diseased)*100/$total_covid_positives}}%</small></span>
+                                <span class="info-box-number"><big>{{$total_covid_positives -$total_recovered - $total_diseased}}</big> <small>{{round(($total_covid_positives -$total_recovered - $total_diseased)*100/$total_covid_positives,2)}}%</small></span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -79,7 +79,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">{{ trans('global.dashboard.diseased') }}</span>
-                                <span class="info-box-number"><big>{{$total_diseased}} </big> <small>{{$total_diseased*100/$total_covid_positives}}%</small></span>
+                                <span class="info-box-number"><big>{{$total_diseased}} </big> <small>{{round($total_diseased*100/$total_covid_positives,2)}}%</small></span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -332,8 +332,8 @@
                                                 <td>{{$patient->alias}}</td>
                                                 <td>{{$patient->clusterQC->cluster_name}}</td>
                                                 <td>
-                                                    <span class="badge {{$patient->patientStatuses()->latest('state')->first()->state =='QUARANTINE' ? 'badge-warning':''}} {{$patient->patientStatuses()->latest('state')->first()->state =='COVID_POSITIVE' ? 'badge-danger':''}} {{$patient->patientStatuses()->latest('state')->first()->state =='RECOVERED' ? 'badge-success':''}} {{$patient->patientStatuses()->latest('state')->first()->state =='DEAD' ? 'badge-success':''}}">
-                                                        {{$patient->patientStatuses()->latest('state')->first()->state ?? ''}}
+                                                    <span class="badge {{$patient->patientStatuses()->latest('state_date')->first()->state =='QUARANTINE' ? 'badge-warning':''}} {{$patient->patientStatuses()->latest('state_date')->first()->state =='COVID_POSITIVE' ? 'badge-danger':''}} {{$patient->patientStatuses()->latest('state_date')->first()->state =='RECOVERED' ? 'badge-success':''}} {{$patient->patientStatuses()->latest('state_date')->first()->state =='DEAD' ? 'badge-success':''}}">
+                                                        {{$patient->patientStatuses()->latest('state_date')->first()->state ?? ''}}
                                                     </span></td>
                                                 <td>
                                                     <div class="sparkbar" data-color="#00a65a" data-height="20">
