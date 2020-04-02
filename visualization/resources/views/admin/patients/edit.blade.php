@@ -77,7 +77,7 @@
                     @endif
                 </div>
                 <div class="form-group {{ $errors->has('exposure_location') ? 'has-error' : '' }}">
-                    <label for="aliaexposure_locations">{{ trans('global.patient.fields.exposure_location') }}*</label>
+                    <label for="aliaexposure_locations">{{ trans('global.patient.fields.patient_location') }}*</label>
                     <input type="text" id="exposure_location" name="exposure_location" class="form-control"
                            value="{{ old('exposure_location', isset($patient) ? $patient->exposure_location : '') }}">
                     @if($errors->has('exposure_location'))

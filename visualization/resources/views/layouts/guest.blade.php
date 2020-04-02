@@ -50,9 +50,9 @@
                     <li class="nav-item">
                         <a href="{{route('guest.home')}}" class="nav-link {{ request()->is('guest/srilanka') ? 'active' : '' }}">{{ trans('global.dashboard.sri_lanka') }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">{{ trans('global.dashboard.worldwide') }}</a>
-                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<a href="#" class="nav-link">{{ trans('global.dashboard.worldwide') }}</a>--}}
+                    {{--</li>--}}
                 </ul>
                 <!-- Right navbar links -->
                 @if(count(config('panel.available_languages', [])) > 0)

@@ -194,7 +194,7 @@
             <div class="form-group"
                  data-toggle="tooltip" data-placement="top" data-html="true"
                  title="{{ trans('global.patient.fields.patient_state_helper') }}">
-                <label for="patient_state">{{ trans('global.patient.fields.exposure_state') }}</label>
+                <label for="patient_state">{{ trans('global.patient.fields.patient_state') }}</label>
                 <select id="patient_state" name="patient_state"
                         class="form-control select2 big-select2 {{ $errors->has('patient_state') ? 'is-invalid' : '' }}"
                         style="width: 100%;" required>
