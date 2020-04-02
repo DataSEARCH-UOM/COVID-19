@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
             DistrictSeeder::class,
             MessagesSeeder::class,
             ClusterQCSeeder::class,
+            PatientsSeeder::class,
+            PatientStatusSeeder::class
         ]);
     }
 }
