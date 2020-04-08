@@ -10,6 +10,7 @@ use App\Patient;
 use App\PatientStatus;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class PatientsController extends Controller
 {
@@ -67,13 +68,16 @@ class PatientsController extends Controller
         abort_unless(\Gate::allows('patient_edit'), 403);
 
         $patient->update($request->all());
-        $currentPatientStatus = $patient->patientStatuses()->latest()->first();
+        $currentPatientStatus = $patient->patientStatuses()->latest('state_date')->first();
         $patientStatusReq = $request->all();
         $patientStatusReq['patient_id'] = $patient->id;
         $patientStatusReq['state'] = $patientStatusReq['patient_state'];
 
-        if ($currentPatientStatus->state != $request['state'] || $currentPatientStatus['hospital'] != $request['hospital']){
+        if ( $currentPatientStatus->state !== $request['patient_state'] || $currentPatientStatus['hospital']!== $request['hospital']){
             $newPatientStatus = PatientStatus::create($patientStatusReq);
+//            var_dump($newPatientStatus);
+//            echo $request['patient_state'];
+
         }
 
         return redirect()->route('admin.patients.index');
