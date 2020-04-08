@@ -20,7 +20,7 @@ class CreatePatientsTable extends Migration
             $table->integer('age');
             $table->string('gender');
             $table->dateTime('identified_date');
-            $table->string('home_location');
+            $table->string('home_location')->nullable();
             $table->string('exposure_location');
             $table->unsignedBigInteger('exposed_from')->nullable();
             $table->foreign('exposed_from')->references('id')->on('patients')->nullable();
