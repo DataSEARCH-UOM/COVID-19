@@ -312,7 +312,7 @@ return [
         'recovered_helper' => 'Total Recovered Patients in Sri Lankan Hospitals',
         'diseased'    =>  'Diseased',
         'diseased_helper' => 'Number of total dead patients',
-        'under_treatment' => 'Under Treatments',
+        'under_treatment' => 'Under Treatment',
         'under_treatment_helper' => 'Number of total confirmed under treatment patient Count',
         'gender_chart'  =>  [
             'header'    => 'Distribution By Gender',
